@@ -1,4 +1,3 @@
-import Axios from "axios";
 import axios from 'axios'
 
 const baseURL = 'https://developers.zomato.com/api/v2.1/';
@@ -21,17 +20,15 @@ export const fetchCity = ( cityQuery ) => {
 
 export const fetchRestaurant = ( cityID ) => {
 
-    const res = axios.get(URL + '/search', {
+    const res = axios.get( baseURL + '/search', {
         params: {
             entity_id: cityID,
             entity_type: 'city',
-            count: 5,
-            start: 0,
         },
         headers: {
             'user-key': API_KEY,
         }
-    })
+    } );
 
     return res;
 
