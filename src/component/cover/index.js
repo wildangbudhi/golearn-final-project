@@ -60,11 +60,11 @@ const Cover = ( props ) => {
             <div className='container'>
 
                 <div className='row justify-content-md-center'>
-                    <div className='col-5'><h1 className='title'>GOZOMATO</h1></div>
+                    <div className='col-sm-5'><h1 className='title'>GOZOMATO</h1></div>
                 </div>
 
                 <div className='row justify-content-md-center'>
-                    <div className='col-6'>
+                    <div className='col-sm-6'>
                         <InputGroup>
                             <FormControl
                                 placeholder="Choose City"
@@ -88,7 +88,7 @@ const Cover = ( props ) => {
                     <div className='container' id='suggestion'>
 
                         <div className='row d-flex justify-content-md-center'>
-                            <div className='col-6 position-absolute'>
+                            <div className='col-sm-6 position-absolute'>
                                 {
                                     isCityInputFocused && cityList.length !== 0 ? 
                                         <ListGroup className=''>

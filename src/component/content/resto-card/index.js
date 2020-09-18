@@ -18,16 +18,16 @@ const RestoCard = ( { name, url, price_range, cuisines, thumb, rating } ) => {
                 <Card.Img variant="top" src={thumb ? thumb : 'https://via.placeholder.com/150'} />
                 <Card.Body className='container'>
                     <Row className='align-items-center'>
-                        <Col xs='12'> 
+                        <Col sm='12'> 
                             <Card.Title>{name}</Card.Title> 
                         </Col>
                     </Row>
 
                     <Row className='align-items-center'>
-                        <Col xs='7'> 
+                        <Col sm='7'> 
                             <Card.Text>{cuisines}</Card.Text>
                         </Col>
-                        <Col xs='5'> 
+                        <Col sm='5'> 
                             <Card.Text>
                                 • {price}
                             </Card.Text>
@@ -36,7 +36,7 @@ const RestoCard = ( { name, url, price_range, cuisines, thumb, rating } ) => {
                     </Row>
 
                     <Row className='align-items-center'>
-                        <Col xs='12'> 
+                        <Col sm='12'> 
                             <Card.Title>{ratings}</Card.Title>
                         </Col>
                     </Row>

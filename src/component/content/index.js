@@ -9,26 +9,26 @@ const Content = ( { restaurantList, doSearch } ) => {
 
                 {
                     !doSearch && restaurantList.length !== 0 ?
-                    <Col xs='12' className='mb-3'>
+                    <Col sm='12' className='mb-3'>
                         <h2>Feel free to choose you favorite meals</h2>
                     </Col> 
                     : ""
                 }
                 {
                     doSearch ? 
-                    <Col xs='12' className='align-items-center text-center'>
+                    <Col sm='12' className='align-items-center text-center'>
                         <Spinner animation="grow" variant="primary" />
                         <Spinner animation="grow" variant="danger" className='ml-3 mr-3' />
                         <Spinner animation="grow" variant="warning" />
                     </Col>
                     :
                     restaurantList.length === 0 ?
-                    <Col xs='12' className='mt-5 align-items-center text-center'>
+                    <Col sm='12' className='mt-5 align-items-center text-center'>
                         <h3>Opss... There is no restaurant...</h3>
                     </Col>
                     :
                     restaurantList.map( ( restaurant, idx ) => (
-                        <Col xs='3' className='mb-5'>
+                        <Col sm='3' className='mb-5'>
                             <RestoCard
                                 name={restaurant.name}
                                 url={restaurant.url} 
