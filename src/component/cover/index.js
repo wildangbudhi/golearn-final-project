@@ -6,6 +6,7 @@ import { ListGroup } from 'react-bootstrap'
 import CitySuggestion from './city-suggestion'
 
 import { fetchCity } from '../../repository/zomato'
+import useDebounce from '../../utils/debounce' 
 
 const Cover = ( props ) => {
 
@@ -18,6 +19,8 @@ const Cover = ( props ) => {
     
     const [ isCityInputFocused, setIsCityInputFocused ] = useState( false );
     const [ cityList, setCityList ] = useState( [] );
+
+    const citySuggestionDebounce = useDebounce( cityQuery, 500 );
 
     const onChangeCityInputText = ( e ) => {
 
@@ -43,6 +46,8 @@ const Cover = ( props ) => {
 
     useEffect( (  ) => {
 
+        console.log( "search" );
+
         let citySuggestion = fetchCity( cityQuery );
         citySuggestion.then( ( { data: { location_suggestions } } ) => {
 
@@ -52,7 +57,7 @@ const Cover = ( props ) => {
 
         } );
         
-    }, [ cityQuery ]);
+    }, [ citySuggestionDebounce ]);
 
     return (
         <header className='content d-flex align-items-center'>
